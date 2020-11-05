@@ -9,7 +9,7 @@ require (
 	github.com/hashicorp/vault/api v1.0.4
 	github.com/minio/minio v0.0.0-20201105153408-bd77f29fc4a3
 	github.com/minio/minio-go v6.0.14+incompatible
-	github.com/operator-framework/operator-sdk v0.18.2
+	github.com/operator-framework/operator-sdk v0.19.4
 	github.com/spf13/pflag v1.0.5
 	k8s.io/apimachinery v0.19.3
 	k8s.io/client-go v12.0.0+incompatible
