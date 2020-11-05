@@ -86,7 +86,7 @@ func (r *ReconcileMinioUser) Reconcile(request reconcile.Request) (reconcile.Res
 
 	minioServer := &miniov1alpha1.MinioServer{}
 	if err := r.client.Get(context.TODO(), types.NamespacedName{
-		Name:      instance.Spec.Server,
+		Name: instance.Spec.Server,
 	}, minioServer); err != nil {
 		return reconcile.Result{}, fmt.Errorf("r.client.Get: %w", err)
 	}
