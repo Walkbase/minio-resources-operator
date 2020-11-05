@@ -6,14 +6,22 @@ import (
 	"github.com/hashicorp/vault/api"
 )
 
+var client api.Client
+
 func init() {
-	c, err := api.NewClient(nil)
-
+	client, err := api.NewClient(nil)
 	if err != nil {
-		panic("poop")
+		panic("Vault is fucked")
 	}
+}
 
-	s, err := c.Logical().List("secret/")
-	fmt.Println(s)
+func HasKeys(user string) (bool, error) {
+	l := client.Logical()
 
+	secret, err := l.Read("miniokeys/" + user)
+
+	fmt.Println("sekret %v", secret)
+	fmt.Println("error" + err.Error())
+
+	return true, nil
 }
